@@ -57,9 +57,7 @@ public class VmSchedulerTimeShared extends VmScheduler {
                 getVmsMigratingOut().add(vm.getUid());
             }
         } else {
-            if (getVmsMigratingOut().contains(vm.getUid())) {
-                getVmsMigratingOut().remove(vm.getUid());
-            }
+            getVmsMigratingOut().remove(vm.getUid());
         }
         boolean result = allocatePesForVm(vm.getUid(), mipsShareRequested);
         updatePeProvisioning();

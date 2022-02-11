@@ -297,7 +297,7 @@ public class Datacenter extends SimEntity {
 
         if (ack) {
             // send back to sender
-            Object pack[] = new Object[2];
+            Object[] pack = new Object[2];
             pack[0] = filename;
             pack[1] = Integer.valueOf(msg);
 
@@ -374,7 +374,7 @@ public class Datacenter extends SimEntity {
 
         try {
             // if a sender using cloudletXXX() methods
-            int data[] = (int[]) ev.getData();
+            int[] data = (int[]) ev.getData();
             cloudletId = data[0];
             userId = data[1];
             vmId = data[2];
@@ -556,7 +556,7 @@ public class Datacenter extends SimEntity {
         int vmId = 0;
 
         try { // if the sender using cloudletXXX() methods
-            int data[] = (int[]) ev.getData();
+            int[] data = (int[]) ev.getData();
             cloudletId = data[0];
             userId = data[1];
             vmId = data[2];
@@ -1056,7 +1056,7 @@ public class Datacenter extends SimEntity {
      */
     @SuppressWarnings("unchecked")
     public <T extends Host> List<T> getHostList() {
-        return (List<T>) getCharacteristics().getHostList();
+        return getCharacteristics().getHostList();
     }
 
     /**

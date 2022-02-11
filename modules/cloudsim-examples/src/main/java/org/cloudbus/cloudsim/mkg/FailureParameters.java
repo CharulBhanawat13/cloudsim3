@@ -39,19 +39,19 @@ public class FailureParameters {
     }
 
     public double getFaultDetectionTime() {
-        return this.FAULT_DETECTION_TIME;
+        return FAULT_DETECTION_TIME;
     }
 
     public void setFaultDetectionTime(double time) {
-        this.FAULT_DETECTION_TIME = time;
+        FAULT_DETECTION_TIME = time;
     }
 
     public double getFaultInjectionTime() {
-        return this.FALT_INJECTION_TIME;
+        return FALT_INJECTION_TIME;
     }
 
     public void setFaultInjectionTime(double time) {
-        this.FALT_INJECTION_TIME = time;
+        FALT_INJECTION_TIME = time;
     }
 
 

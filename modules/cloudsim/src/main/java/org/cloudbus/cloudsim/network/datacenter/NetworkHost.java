@@ -89,7 +89,7 @@ public class NetworkHost extends Host {
         // insert in each vm packet recieved
         recvpackets();
         for (Vm vm : super.getVmList()) {
-            double time = ((NetworkVm) vm).updateVmProcessing(currentTime, getVmScheduler()
+            double time = vm.updateVmProcessing(currentTime, getVmScheduler()
                     .getAllocatedMipsForVm(vm));
             if (time > 0.0 && time < smallerTime) {
                 smallerTime = time;

@@ -370,10 +370,7 @@ public class DatacenterCharacteristics {
      * @return if all machines are working, otherwise
      */
     public boolean isWorking() {
-        boolean result = false;
-        if (getNumberOfFailedHosts() == 0) {
-            result = true;
-        }
+        boolean result = getNumberOfFailedHosts() == 0;
 
         return result;
     }

@@ -157,7 +157,7 @@ public class ReportGenerator {
                 // use comma as separator
                 if (k > 0) {
                     String[] cloudletData = line.split(",");
-                    clockTicksSB.append("\'" + cloudletData[0] + "\',");
+                    clockTicksSB.append("'" + cloudletData[0] + "',");
                     remainLengthSB.append(cloudletData[4] + ",");
                 }
                 k++;

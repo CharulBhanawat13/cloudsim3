@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * The Log class used for performing loggin of the simulation process. It provides the ability to
+ * The Log class used for performing logging of the simulation process. It provides the ability to
  * substitute the output stream by any OutputStream subclass.
  *
  * @author Anton Beloglazov
@@ -93,7 +93,7 @@ public class Log {
     }
 
     /**
-     * Prints a string formated as in String.format().
+     * Prints a string formatted as in String.format().
      *
      * @param format the format
      * @param args   the args

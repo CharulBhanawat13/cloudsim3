@@ -35,8 +35,6 @@ public class DelayMatrix_Float {
     private DelayMatrix_Float() {
     }
 
-    ;
-
     /**
      * this constructor creates an correct initialized Float-Delay-Matrix
      *

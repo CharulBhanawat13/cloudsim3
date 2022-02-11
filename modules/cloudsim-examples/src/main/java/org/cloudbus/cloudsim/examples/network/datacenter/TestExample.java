@@ -271,7 +271,7 @@ public class TestExample {
     static void CreateNetwork(int numhost, NetworkDatacenter dc) {
 
         // Edge Switch
-        EdgeSwitch edgeswitch[] = new EdgeSwitch[1];
+        EdgeSwitch[] edgeswitch = new EdgeSwitch[1];
 
         for (int i = 0; i < 1; i++) {
             edgeswitch[i] = new EdgeSwitch("Edge" + i, NetworkConstants.EDGE_LEVEL, dc);

@@ -219,7 +219,6 @@ public class Switch extends SimEntity {
             int edgeswitchid = dc.VmToSwitchid.get(recvVMid);
             // search which aggregate switch has it
             int aggSwtichid = -1;
-            ;
             for (Switch sw : downlinkswitches) {
                 for (Switch edge : sw.downlinkswitches) {
                     if (edge.getId() == edgeswitchid) {

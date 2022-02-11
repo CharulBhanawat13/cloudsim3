@@ -16,11 +16,16 @@ import org.cloudbus.cloudsim.provisioners.BwProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
  * Simulation with x VMs and y CLs. One random VM is failed before any
@@ -28,10 +33,22 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class CloudSimExampleMkg4CHECK {
 
-    private static List<String> coreSwitchList = new ArrayList<>();
-    private static List<String> aggSwitchList = new ArrayList<>();
-    private static List<String> edgeSwitchList = new ArrayList<>();
-    private static List<String> hostListIds = new ArrayList<>();
+    /*static{
+        String path="modules/cloudsim-examples/logs/output.log";
+        try {
+            FileOutputStream outputStream=new FileOutputStream(path);
+            Log.setOutput(outputStream);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+*/
+    private static final List<String> coreSwitchList = new ArrayList<>();
+    private static final List<String> aggSwitchList = new ArrayList<>();
+    private static final List<String> edgeSwitchList = new ArrayList<>();
+    private static final List<String> hostListIds = new ArrayList<>();
+
 
     /**
      * The cloudlet list.
@@ -124,6 +141,8 @@ public class CloudSimExampleMkg4CHECK {
      * Creates main() to run this example
      */
     public static void main(String[] args) {
+
+
         Log.printLine("Starting CloudSimExamplemkg1...");
 
         try {
@@ -157,12 +176,11 @@ public class CloudSimExampleMkg4CHECK {
             /* EDIT THIS to Fail a VM before simulation starts */
             //failVMsBeforeSimulationStarts();
 
-
             datacenter0.setFailureParameters(
                     vmlist,
                     FailureParameters.FAIL_SINGLE_VM,
                     FailureParameters.STATIC_DELAY,
-                    2.0,
+                    HostFluctuatingParameters.actionTimeParameter,
                     null
             );
 
@@ -236,7 +254,7 @@ public class CloudSimExampleMkg4CHECK {
                 //	f.append(DatacenterMkg.RFF_result + ","+DatacenterMkg.BF_result +","+DatacenterMkg.FF_result+ ","+ FailureParameters.NO_OF_MONITOR_CALLS+"," + e_edg+","+e_aggr+","+e_core +"\n");
                 //	f.append(DatacenterMkg.RFF_result + ","+DatacenterMkg.BF_result +","+DatacenterMkg.FF_result+ ","+ FailureParameters.NO_OF_MONITOR_CALLS+"," + e_edg+","+e_aggr+","+e_core +","+"CHECK"+"\n");
                 f.append(DatacenterMkg.RFF_result + "," + DatacenterMkg.BF_result + "," + DatacenterMkg.FF_result + "," + FailureParameters.NO_OF_MONITOR_CALLS + "," + e_edg + "," + e_aggr + "," + e_core
-                        + "," + "CHECK" + FailureParameters.FALT_INJECTION_TIME + "," + FailureParameters.FAULT_DETECTION_TIME + "," + "\n");
+                        + "," + "CHECK " + FailureParameters.FALT_INJECTION_TIME + "," + FailureParameters.FAULT_DETECTION_TIME + "," + "\n");
                 f.close();
             }
 

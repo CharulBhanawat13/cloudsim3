@@ -27,20 +27,20 @@ public class LavishFattreeTopologyAdvance {
      * The cloudlet list.
      */
     private static List<Cloudlet> cloudletList;
-    private static List CoreSwitchList = new ArrayList();
-    private static List AggSwitchList = new ArrayList();
-    private static List EdgeSwitchList = new ArrayList();
-    private static List HostListids = new ArrayList();
+    private static final List CoreSwitchList = new ArrayList();
+    private static final List AggSwitchList = new ArrayList();
+    private static final List EdgeSwitchList = new ArrayList();
+    private static final List HostListids = new ArrayList();
     /**
      * The vmlist.
      */
     private static List<VmMkg> vmlist;
 
     // Static Mapping
-    private static boolean STATIC_MAPPPING_ONLY = true;
-    private static Map<Integer, List<Integer>> CORE_TO_AGG_LINKS_MAPPING = new HashMap<>();
-    private static Map<Integer, List<Integer>> AGG_TO_EDGE_LINKS_MAPPING = new HashMap<>();
-    private static Map<Integer, List<Integer>> EDGE_TO_HOST_MAPPING = new HashMap<>();
+    private static final boolean STATIC_MAPPPING_ONLY = true;
+    private static final Map<Integer, List<Integer>> CORE_TO_AGG_LINKS_MAPPING = new HashMap<>();
+    private static final Map<Integer, List<Integer>> AGG_TO_EDGE_LINKS_MAPPING = new HashMap<>();
+    private static final Map<Integer, List<Integer>> EDGE_TO_HOST_MAPPING = new HashMap<>();
 
     private static List<VmMkg> createVM(int userId, int vms, int idShift) {
         System.out.println("\n\nStart Create VMs..........");

@@ -483,10 +483,7 @@ public class Cloudlet {
      * @return <tt>true</tt> if this Cloudlet has reserved before, <tt>false</tt> otherwise
      */
     public boolean hasReserved() {
-        if (reservationId == -1) {
-            return false;
-        }
-        return true;
+        return reservationId != -1;
     }
 
     /**
@@ -1370,10 +1367,7 @@ public class Cloudlet {
      * @return <tt>true</tt> if required, <tt>false</tt> otherwise
      */
     public boolean requiresFiles() {
-        boolean result = false;
-        if (getRequiredFiles() != null && getRequiredFiles().size() > 0) {
-            result = true;
-        }
+        boolean result = getRequiredFiles() != null && getRequiredFiles().size() > 0;
 
         return result;
     }

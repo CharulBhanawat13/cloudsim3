@@ -181,11 +181,7 @@ public class ResCloudletMkg {
      * @post $none
      */
     public boolean hasReserved() {
-        if (reservId == NOT_FOUND) {
-            return false;
-        }
-
-        return true;
+        return reservId != NOT_FOUND;
     }
 
     /**

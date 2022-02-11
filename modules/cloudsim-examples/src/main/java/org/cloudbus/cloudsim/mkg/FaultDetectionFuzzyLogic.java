@@ -15,11 +15,11 @@ import static java.lang.Integer.parseInt;
 
 public class FaultDetectionFuzzyLogic {
 
-    private double CONTRIBUTION_VARIABLE = 0.25;
+    private final double CONTRIBUTION_VARIABLE = 0.25;
 
-    private double THRESHOLD_FOR_ACTION = 86;
+    private final double THRESHOLD_FOR_ACTION = 86;
 
-    private String INPUT_DATA_VARIABLE_FILE_PATH = "";
+    private final String INPUT_DATA_VARIABLE_FILE_PATH = "";
 
     private void detechFaultFuzzyLogic() {
     }

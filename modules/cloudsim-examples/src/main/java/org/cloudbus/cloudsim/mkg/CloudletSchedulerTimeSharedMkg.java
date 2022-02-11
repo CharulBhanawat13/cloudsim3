@@ -32,7 +32,7 @@ public class CloudletSchedulerTimeSharedMkg extends CloudletSchedulerMkg {
     /**
      * The failed cloudlet list.
      */
-    private List<? extends ResCloudletMkg> cloudletFailedList;
+    private final List<? extends ResCloudletMkg> cloudletFailedList;
 
     /**
      * Creates a new CloudletSchedulerTimeSharedAtul object. This method must be invoked before starting

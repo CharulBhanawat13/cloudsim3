@@ -274,7 +274,7 @@ public class DatacenterMkg extends Datacenter {
         int vmId = 0;
 
         try { // if the sender using cloudletXXX() methods
-            int data[] = (int[]) ev.getData();
+            int[] data = (int[]) ev.getData();
             cloudletId = data[0];
             userId = data[1];
             vmId = data[2];
@@ -603,7 +603,7 @@ public class DatacenterMkg extends Datacenter {
 
     private void findSuspectsByFuzzyLogic() {
         List<? extends Host> hostList = getVmAllocationPolicy().getHostList();
-        System.out.println("host to fail: " + toFail.get(0).getHost().getId());
+       // System.out.println("host to fail: " + toFail.get(0).getHost().getId());
         for (Host host : hostList) {
 
             int totalMips = host.getTotalMips();
@@ -675,12 +675,8 @@ public class DatacenterMkg extends Datacenter {
 
                                 //Remove from both suspect lists
                                 //Log.printLine(CloudSim.clock()+"Removing Cloudlet ID#"+rcl.getCloudletId() + " from suspect lists");
-                                if (suspect1.contains(failedCloudlet)) {
-                                    suspect1.remove(failedCloudlet);
-                                }
-                                if (suspect2.contains(failedCloudlet)) {
-                                    suspect2.remove(failedCloudlet);
-                                }
+                                suspect1.remove(failedCloudlet);
+                                suspect2.remove(failedCloudlet);
                             } else {
                                 //NOT OKAY. Add to suspect list accordingly
                                 if (suspect1.contains(failedCloudlet)) {
@@ -824,8 +820,8 @@ public class DatacenterMkg extends Datacenter {
         System.out.println("\n\n\n\n....." + hostid);
 
         if (hostid > 4) {
-            if (((int) hostid % 2) == 0) {
-                if (((int) hostid % 4) == 0) {
+            if ((hostid % 2) == 0) {
+                if ((hostid % 4) == 0) {
                     pod_number = hostid / 4;
                 } else {
                     pod_number = (hostid / 4) + 1;
@@ -851,7 +847,7 @@ public class DatacenterMkg extends Datacenter {
         System.out.println("\n\n\n\n....." + hostid);
 
 
-        if (((int) hostid % 2) == 0) {
+        if ((hostid % 2) == 0) {
             subpod_number = hostid / number_of_hosts_in_one_subpod;
         } else {
             subpod_number = (hostid / number_of_hosts_in_one_subpod) + 1;
